@@ -12,7 +12,8 @@ Then run ```ng serve --port 8081```
 Make sure you install mongodb first.
 And run ```mongod``` and ```mongo``` on your local machine
 
-
+## Youtube Demo
+[![Angular12 CRUD Demo](youtube.png)](https://youtu.be/eQllGA-97Po)
 
 
 ## Screenshots are given below both frontend and backend
