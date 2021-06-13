@@ -1,0 +1,75 @@
+<div>
+    <div *ngIf="currentEmployee.id" class="edit-form">
+      <h4>Employee</h4>
+      <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              [(ngModel)]="currentEmployee.name"
+              name="name"
+            />
+        </div>  
+        <div class="form-group">
+          <label for="education">Education</label>
+          <input
+            type="text"
+            class="form-control"
+            id="education"
+            [(ngModel)]="currentEmployee.education"
+            name="education"
+          />
+        </div>
+        <div class="form-group">
+          <label for="employment">Employment</label>
+          <input
+            type="text"
+            class="form-control"
+            id="employment"
+            [(ngModel)]="currentEmployee.employment"
+            name="employment"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentEmployee.published ? "Published" : "Pending" }}
+        </div>
+      </form>
+  
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentEmployee.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentEmployee.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteEmployee()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateEmployee()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentEmployee.id">
+      <br />
+      <p>Cannot access this Employee...</p>
+    </div>
+  </div>
